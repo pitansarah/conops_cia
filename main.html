@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concept of Operations: Psychological Defense</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <div id="content"></div>
+  <script>
+    fetch('outline.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('content').innerHTML = data;
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'main.css'; // Adjust the path as needed
+        document.head.appendChild(link);
+      })
+      .catch(error => console.error('Error fetching HTML:', error));
+  </script>
+</body>
+</html>

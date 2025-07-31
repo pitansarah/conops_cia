@@ -1,0 +1,24 @@
+h1 {
+        text-align: center;
+      }
+      // center div text at bottom of table
+      .centered-div {
+        margin: 10px;
+        text-align: center;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th, td {
+        border: 1px solid black;
+        padding: 8px;
+        vertical-align: top;
+      }
+      th {
+        background-color: #d3d3d3; /* Light gray */
+      }
+      td:first-child {
+        background-color: #d3d3d3; /* Light gray for first column */
+        font-weight: bold;
+      }
