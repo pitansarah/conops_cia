@@ -1,0 +1,30 @@
+body{
+  font-family: Arial, sans-serif; 
+  margin:20px;
+}
+h2 {
+    text-decoration:underline;
+}
+
+h3.dash-list {
+  list-style-type: none; 
+  padding-left: 20px;     
+}
+
+ul {
+    list-style-type:none;
+}
+
+
+
+ul.dash-list li::marker {
+  content: '—';          /* em dash */
+  color: black;
+  font-size: 1em;
+}
+
+.comment {
+    background-color: yellow;
+  padding: 0 0.2em;
+  border-radius: 0.15em;
+}

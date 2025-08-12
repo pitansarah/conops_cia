@@ -5,3 +5,14 @@ body {
 h1, h2, h3, h4 {
     margin-top: 1.5em;
     }
+@media print {
+  .page-break {
+    display: block;               /* Must be block-level */
+    page-break-before: always;    /* Legacy support */
+    break-before: page;           /* Modern standard */
+  }
+
+#content {
+    overflow: visible !important;
+  }
+}

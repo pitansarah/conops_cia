@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D MDS Plot of Grooming Habits</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="plot" style="width: 100%; height: 600px;"></div>
+    <script>
+        const data = [
+            {
+                x: [4.32], y: [3.21], z: [8.76],
+                mode: 'markers+text',
+                type: 'scatter3d',
+                name: 'Normal Population',
+                marker: { size: 8, color: '#4CAF50' },
+                text: ['Normal'],
+                textposition: 'top center'
+            },
+            {
+                x: [2.45], y: [6.78], z: [1.23],
+                mode: 'markers+text',
+                type: 'scatter3d',
+                name: 'ASPD',
+                marker: { size: 8, color: '#F44336' },
+                text: ['ASPD'],
+                textposition: 'top center'
+            },
+            {
+                x: [5.67], y: [7.89], z: [4.56],
+                mode: 'markers+text',
+                type: 'scatter3d',
+                name: 'NPD',
+                marker: { size: 8, color: '#2196F3' },
+                text: ['NPD'],
+                textposition: 'top center'
+            },
+            {
+                x: [0.00], y: [0.00], z: [0.00],
+                mode: 'markers+text',
+                type: 'scatter3d',
+                name: 'SPD',
+                marker: { size: 8, color: '#9C27B0' },
+                text: ['SPD'],
+                textposition: 'top center'
+            },
+            {
+                x: [3.89], y: [4.56], z: [3.45],
+                mode: 'markers+text',
+                type: 'scatter3d',
+                name: 'DID',
+                marker: { size: 8, color: '#FF9800' },
+                text: ['DID'],
+                textposition: 'top center'
+            }
+        ];
+
+        const layout = {
+            title: {
+                text: '3D MDS Plot of Grooming Habits',
+                font: { size: 18, color: '#333333' }
+            },
+            scene: {
+                xaxis: {
+                    title: 'MDS Dimension 1',
+                    range: [0, 10],
+                    gridcolor: '#B0BEC5',
+                    zerolinecolor: '#333333'
+                },
+                yaxis: {
+                    title: 'MDS Dimension 2',
+                    range: [0, 10],
+                    gridcolor: '#B0BEC5',
+                    zerolinecolor: '#333333'
+                },
+                zaxis: {
+                    title: 'MDS Dimension 3',
+                    range: [0, 10],
+                    gridcolor: '#B0BEC5',
+                    zerolinecolor: '#333333'
+                },
+                bgcolor: '#FFFFFF'
+            },
+            margin: { l: 0, r: 0, b: 0, t: 50 },
+            showlegend: true,
+            legend: { x: 0, y: 1, font: { size: 12, color: '#333333' } }
+        };
+
+        Plotly.newPlot('plot', data, layout);
+    </script>
+</body>
+</html>

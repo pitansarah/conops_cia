@@ -1,0 +1,107 @@
+<!--
+run and compile:
+weasyprint main.html output.pdf
+then
+python3 -m http.server 8000
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foreword</title>
+  <link rel="stylesheet" href="foreword.css" />
+  <link rel="stylesheet" href="tables.css"/>
+</head>
+<body>
+    <!--
+    Foreword Outline
+
+    Purpose and Vision: A brief explanation of why the CONOPS was developed and what the overarching goals are.
+    
+    Strategic Context: How the concept fits into broader organizational, operational, or strategic goals.
+    
+    Importance and Impact: Why the concept matters—what problems it addresses or what opportunities it enables.
+    
+    Acknowledgements: Recognition of key contributors or stakeholders involved in developing the CONOPS.
+    
+    Call to Action: Encouragement for stakeholders to support or engage with the concept.
+    -->
+    <h2>Purpose & Vision</h2>
+        <p>
+            Purpose: Build a team of individuals committed to serving our nation, who have demonstrated exceptional psychic and intellectual abilities to protect and defend the internal psychological landscape of our blessed nation.
+        </p>
+    <h2>Conceptual Hypotheses in Defense of the Proposed Program</h2>
+        <ul class="dash-list">
+            <p class="comment">Develop!</p>
+            <li>other forces that are difficult to address in physical realm must be defeated; discuss actual threat of potential non-human sentient beings</li>
+            <li>prove that in rare cases schizophrenia is beyond mental illness and is actual a path, although a difficult one to clairvoyance. explain how you wish to make the chances of this transformation more common in our youth's generation</li>
+            <li>define external psychological (psyopps) v. internal psychological (give examples of psychological torture difficult to remedy with our current means)</li>
+        </ul>
+    <h2>Mission: CIA</h2>
+        <ul class="dash-list">
+            <li>1. Collect important foreign intelligence.</li>
+            <li>2. Produce objective all-source analysis.</li>
+            <li>3. Conduct effective covert action as directed by the President.</li>
+            <li>4. Safeguarding the secrets that help keep our nation safe.</li>
+        </ul>
+    <h2>Mission: Psychological Defense Unit</h2>
+    <p class="comment">Tailor, revise AI!</p>
+        <h3 class="dash-list"><em>1. Detect and Analyze Foreign Psychological Operations</em></h3>
+            <ul>
+                <li>Identify and monitor adversary psychological campaigns, including propaganda, disinformation, and influence operations targeting foreign populations and U.S. interests.</li>
+                <li>Use behavioral science, neurocognitive research, and data analytics to assess tactics and evolving threat methods.</li>
+            </ul>
+        <h3 class="dash-list"><em>2. Develop and Implement Counter-PSYOP Strategies</em></h3>
+            <ul>        
+                <li>Design active and passive countermeasures to disrupt or neutralize hostile psychological influence efforts.</li>
+                <li>Support covert operations that undermine adversaries’ cognitive warfare capabilities.</li>
+            </ul>
+        <h3 class="dash-list"><em>3. Provide Training and Support for CIA Officers</em></h3>
+            <ul>
+                <li>Equip operatives with awareness and resilience techniques against psychological manipulation and influence during HUMINT missions.</li>
+                <li>Train field officers to recognize and counter cognitive exploitation and deception.</li>
+            </ul>
+        <h3 class="dash-list"><em>4. Advance Cognitive and Behavioral Research</em></h3>
+            <ul>
+                <li>Collaborate with academia, allied intelligence agencies, and private sector experts to advance understanding of human cognition in the context of security threats.</li>
+                <li>Develop new technologies and methodologies for psychological defense, including AI-driven behavioral modeling and clinical interventions for the treatment of undifferentiated forms of psychotic illness. Support reform in psychiatric environments and raise awareness of spectrum, undifferentiated forms of personality disorders and mental illness.</li>
+            </ul>   
+        <h3 class="dash-list"><em>5. Inform and Support National Security Policy</em></h3>
+            <ul>
+                <li>Produce intelligence assessments and threat briefings on cognitive warfare and psychological influence for policymakers and the Intelligence Community.</li>
+                <li>Identify vulnerabilities within U.S. and allied systems to inform protective measures.</li>
+            </ul>
+        <h3 class="dash-list"><em>6. Coordinate Interagency and International Efforts</em></h3>
+            <ul>
+                <li>Serve as a liaison to FBI, NSA, Department of Defense, and international partners on psychological threat intelligence and joint countermeasures.</li>
+                <li>Promote unified strategies to build resilience against psychological and cognitive attacks.</li>
+            </ul>
+        <h3 class="dash-list"><em>7. Develop Offensive Psychological Capabilities (Optional/Strategic)</em></h3>
+            <ul>
+                <li>When authorized, design and deploy targeted psychological influence operations to support U.S. national security interests abroad.</li>
+                <li>Support covert influence campaigns aligned with U.S. foreign policy goals.</li>
+            </ul>
+<h2>How These Two Missions Align</h2>
+    <div id="table-container"></div>
+<!--Scripts-->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    fetch('tables.html')
+      .then(response => response.text())
+      .then(data => {
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = data;
+        const table = tempDiv.querySelector('.vision');
+        if (table) {
+          document.getElementById('table-container').appendChild(table);
+        } else {
+          console.error('Table not found in tables.html');
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching tables.html:', error);
+      });
+  });
+</script>
+</body>

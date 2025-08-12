@@ -1,24 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Concept of Operations: Psychological Defense</title>
   <link rel="stylesheet" href="main.css" />
+  <style>
+    @media print {
+      .page-break {
+        display: block;
+        page-break-before: always;
+        break-before: page;
+      }
+    }
+  </style>
 </head>
 <body>
   <div id="content"></div>
+  <div id="table-container"></div>
+
   <script>
-    fetch('outline.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('content').innerHTML = data;
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.getElementById('content');
+
+      const loadCSS = (href) => {
         const link = document.createElement('link');
         link.rel = 'stylesheet';
-        link.href = 'main.css'; // Adjust the path as needed
+        link.href = href;
         document.head.appendChild(link);
-      })
-      .catch(error => console.error('Error fetching HTML:', error));
+      };
+
+      // Load outline.html
+      fetch('outline.html')
+        .then(r => r.text())
+        .then(html => {
+          container.insertAdjacentHTML('beforeend', html);
+          loadCSS('main.css');
+        })
+        .catch(e => console.error('Error fetching outline:', e));
+
+      // Load foreword.html with a page break
+      fetch('foreword.html')
+        .then(r => r.text())
+        .then(html => {
+          container.insertAdjacentHTML('beforeend', `
+          <div class="page-break">${html}</div>`);
+          loadCSS('foreword.css');
+        })
+        .catch(e => console.error('Error fetching foreword:', e));
+    });
+  document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("table-container");
+
+  fetch("tables.html")
+    .then(response => response.text())
+    .then(htmlText => {
+      const temp = document.createElement("div");
+      temp.innerHTML = htmlText;
+
+      // Select only the table with class "vision"
+      const visionTable = temp.querySelector(".vision");
+
+      if (visionTable) {
+        container.appendChild(visionTable);
+      } else {
+        console.error('No table with class "vision" found in tables.html');
+      }
+    })
+    .catch(err => console.error("Error fetching tables.html:", err));
+  });
   </script>
 </body>
 </html>
